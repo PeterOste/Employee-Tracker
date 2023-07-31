@@ -47,7 +47,27 @@ async function viewAllEmployees() {
     return rows;
 }
 
+// Function to add new department
+async function addDepartment(departmentName) {
+    const[result] = await db.query();
+}
+
+// Function to add new role
+async function addRole(title, salary, departmentId) {
+    const[result] = await db.query();
+}
+
+// Function to add new employee
+async function addEmployee(firstName, lastName, roleId, managerId) {
+    const[result] = await db.query();
+}
+
 module.exports = {
     viewAllDepartments,
-    viewAllRows
+    viewAllRows,
+    viewAllEmployees,
+    addDepartment,
+    addRole,
+    addEmployee,
+    
 };
