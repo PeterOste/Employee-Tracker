@@ -1,7 +1,7 @@
 const db = require('./db');
 
 // Function to view all departments
-async function viewAllDepartments() {
+async function viewDepartments() {
     const [rows] = await db.query(`
         SELECT 
             id, 
@@ -13,7 +13,7 @@ async function viewAllDepartments() {
 }
 
 // Function to view all rows
-async function viewAllRows() {
+async function viewRows() {
     const [rows] = await db.query(`
         SELECT 
             id, 
@@ -28,7 +28,7 @@ async function viewAllRows() {
 
 // Function to view all employees
 // Used LEFT JOIN to make reading for comprehensive
-async function viewAllEmployees() {
+async function viewEmployees() {
     const [rows] = await db.query(`
         SELECT
             employee.id,
