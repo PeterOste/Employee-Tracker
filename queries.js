@@ -19,7 +19,7 @@ async function viewAllRows() {
             id, 
             title, 
             salary, 
-            department_id, 
+            department_id 
         FROM 
             role
     `);
@@ -49,19 +49,29 @@ async function viewAllEmployees() {
 
 // Function to add new department
 async function addDepartment(departmentName) {
-    const[result] = await db.query();
+    const[result] = await db.query(`INSERT INTO department (name) VALUES (?)`, [departmentName]);
+    return result.insertId;
 }
 
 // Function to add new role
 async function addRole(title, salary, departmentId) {
-    const[result] = await db.query();
+    const[result] = await db.query(`INSERT INTO role (title, salary, department_id) VALUES (?, ?, ?)`, [title, salary, departmentId]);
+    return result.insertId;
 }
 
 // Function to add new employee
 async function addEmployee(firstName, lastName, roleId, managerId) {
-    const[result] = await db.query();
+    const[result] = await db.query(`Insert INTO employee (first_name, last_name, role_id, manager_id) VALUES (?, ?, ?, ?)`, [firstName, lastName, roleId, managerId]);
+    return result.insertId;
 }
 
+// Function to update current employee
+async function updateEmployee(employeeId, newRoleId) {
+    const[result] = await db.query(`UPDATE employee SET role_id = ? WHERE id = ?`, [newRoleId, employeeId]);
+    return result.affectedRows > 0;
+}
+
+// Exports
 module.exports = {
     viewAllDepartments,
     viewAllRows,
@@ -69,5 +79,5 @@ module.exports = {
     addDepartment,
     addRole,
     addEmployee,
-    
+    updateEmployee
 };
