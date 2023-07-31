@@ -13,7 +13,7 @@ async function viewDepartments() {
 }
 
 // Function to view all rows
-async function viewRows() {
+async function viewRoles() {
     const [rows] = await db.query(`
         SELECT 
             id, 
@@ -73,9 +73,9 @@ async function updateEmployee(employeeId, newRoleId) {
 
 // Exports
 module.exports = {
-    viewAllDepartments,
-    viewAllRows,
-    viewAllEmployees,
+    viewDepartments,
+    viewRoles,
+    viewEmployees,
     addDepartment,
     addRole,
     addEmployee,
