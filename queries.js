@@ -1,4 +1,4 @@
-const db = require('./db');
+const db = require('./db.js');
 
 // Function to view all departments
 async function viewDepartments() {
@@ -27,7 +27,7 @@ async function viewRoles() {
 }
 
 // Function to view all employees
-// Used LEFT JOIN to make reading for comprehensive
+// Used LEFT JOIN to make reading comprehensive
 async function viewEmployees() {
     const [rows] = await db.query(`
         SELECT
