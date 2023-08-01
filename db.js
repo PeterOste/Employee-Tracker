@@ -1,5 +1,6 @@
 const mysql = require('mysql2');
 
+// Creating database connection information
 const db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
@@ -7,6 +8,7 @@ const db = mysql.createConnection({
     database: 'employee_tracker_db'
 });
 
+// Connecting to database
 db.connect((err) => {
     if (err) {
         console.error('Error connecting to database:', err);
@@ -16,4 +18,5 @@ db.connect((err) => {
     console.log('Connected to database');
 });
 
-mopdule.exports = db;
+// Export
+module.exports = db;
