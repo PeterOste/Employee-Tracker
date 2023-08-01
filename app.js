@@ -51,7 +51,7 @@ async function menu() {
             const { departmentName } = await inquirer.prompt([
                 {
                     type: 'input',
-                    name: 'departmentName',
+                    name: 'departmentName.name',
                     message: 'Enter the name of the department:',
                     validate: (input) => (input ? true : 'Please enter department name'),
                 },

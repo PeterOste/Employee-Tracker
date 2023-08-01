@@ -2,7 +2,7 @@ const db = require('./db.js');
 
 // Function to view all departments
 async function viewDepartments() {
-    const [rows] = await db.query(`
+    const [rows] = await db.promise().query(`
         SELECT 
             id, 
             name 
@@ -14,7 +14,7 @@ async function viewDepartments() {
 
 // Function to view all rows
 async function viewRoles() {
-    const [rows] = await db.query(`
+    const [rows] = await db.promise().query(`
         SELECT 
             id, 
             title, 
@@ -29,7 +29,7 @@ async function viewRoles() {
 // Function to view all employees
 // Used LEFT JOIN to make reading comprehensive
 async function viewEmployees() {
-    const [rows] = await db.query(`
+    const [rows] = await db.promise().query(`
         SELECT
             employee.id,
             employee.first_name,
@@ -49,25 +49,25 @@ async function viewEmployees() {
 
 // Function to add new department
 async function addDepartment(departmentName) {
-    const[result] = await db.query(`INSERT INTO department (name) VALUES (?)`, [departmentName]);
+    const[result] = await db.promise().query(`INSERT INTO department (name) VALUES (?)`, [departmentName]);
     return result.insertId;
 }
 
 // Function to add new role
 async function addRole(title, salary, departmentId) {
-    const[result] = await db.query(`INSERT INTO role (title, salary, department_id) VALUES (?, ?, ?)`, [title, salary, departmentId]);
+    const[result] = await db.promise().query(`INSERT INTO role (title, salary, department_id) VALUES (?, ?, ?)`, [title, salary, departmentId]);
     return result.insertId;
 }
 
 // Function to add new employee
 async function addEmployee(firstName, lastName, roleId, managerId) {
-    const[result] = await db.query(`Insert INTO employee (first_name, last_name, role_id, manager_id) VALUES (?, ?, ?, ?)`, [firstName, lastName, roleId, managerId]);
+    const[result] = await db.promise().query(`Insert INTO employee (first_name, last_name, role_id, manager_id) VALUES (?, ?, ?, ?)`, [firstName, lastName, roleId, managerId]);
     return result.insertId;
 }
 
 // Function to update current employee
 async function updateEmployee(employeeId, newRoleId) {
-    const[result] = await db.query(`UPDATE employee SET role_id = ? WHERE id = ?`, [newRoleId, employeeId]);
+    const[result] = await db.promise().query(`UPDATE employee SET role_id = ? WHERE id = ?`, [newRoleId, employeeId]);
     return result.affectedRows > 0;
 }
 
