@@ -3,11 +3,20 @@ This is a command-line application that allows users to manage departments, role
 
 ## Installation
 1. Clone the repository to your local machine.
-2. Navigate to the project directory in the terminal.
-3. Run the command `npm install` to install any dependencies.
+2. Make sure `Node.js` is installed.
+3. Make sure `MySQL` is installed.
+4. Navigate to the project directory in the terminal.
+5. Run the command `npm install` to install any dependencies.
 
 ## Database Configuration
-Ensure that you set up the schema.sql and seeds.sql files prior to using the application.
+1. Ensure that MySQL is installed on your machine.
+2. In the project folder, you'll find a folder named `dh`` which contains the `schema.sql` and `seeds.sql` files.
+4. Open the terminal and enter your MySQL credentials: `mysql -u you_username -p`.
+5. Enter you password when prompted. 
+6. To create the tables and populate initial data in the "employee_tracker_db," execute the following commands in the MySQL shell:
+    - `USE employee_tracker_db;`
+    - `SOURCE db/schema.sql;`
+    - `SOURCE db/seeds.sql;`
 
 ## Usage
 To start the application, run `node app.js` in the terminal.
