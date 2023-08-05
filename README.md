@@ -10,8 +10,8 @@ This is a command-line application that allows users to manage departments, role
 
 ## Database Configuration
 1. Ensure that MySQL is installed on your machine.
-2. In the project folder, you'll find a folder named `dh`` which contains the `schema.sql` and `seeds.sql` files.
-4. Open the terminal and enter your MySQL credentials: `mysql -u you_username -p`.
+2. In the project folder, you'll find a folder named `db` which contains the `schema.sql` and `seeds.sql` files.
+4. Open the terminal and enter your MySQL credentials: `mysql -u you_username -p`
 5. Enter you password when prompted. 
 6. To create the tables and populate initial data in the "employee_tracker_db," execute the following commands in the MySQL shell:
     - `USE employee_tracker_db;`
