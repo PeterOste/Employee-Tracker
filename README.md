@@ -1,4 +1,4 @@
-# Employee-Tracker
+# Employee Tracker
 This is a command-line application that allows users to manage departments, roles, and employees in a company. Users can view existing data, add new departments, roles, and employees, and update an employee's role.
 
 ## Installation
@@ -10,10 +10,10 @@ This is a command-line application that allows users to manage departments, role
 
 ## Database Configuration
 1. Ensure that MySQL is installed on your machine.
-2. In the project folder, you'll find a folder named `db` which contains the `schema.sql` and `seeds.sql` files.
+2. Navigate to the `db` folder, which contains the `schema.sql` and `seeds.sql` files.
 4. Open the terminal and enter your MySQL credentials: `mysql -u you_username -p`
-5. Enter you password when prompted. 
-6. To create the tables and populate initial data in the "employee_tracker_db," execute the following commands in the MySQL shell:
+5. Enter your password when prompted. 
+6. To create the tables and populate initial data in the `employee_tracker_db;` execute the following commands in the MySQL shell:
     - `USE employee_tracker_db;`
     - `SOURCE db/schema.sql;`
     - `SOURCE db/seeds.sql;`
