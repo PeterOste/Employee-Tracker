@@ -1,6 +1,9 @@
 # Employee Tracker
 This is a command-line application that allows users to manage departments, roles, and employees in a company. Users can view existing data, add new departments, roles, and employees, and update an employee's role.
 
+## Demo
+https://drive.google.com/file/d/1yXw7okHd2pCUhTCMpKUzWpts5SIeYVxc/view
+
 ## Installation
 1. Clone the repository to your local machine.
 2. Make sure `Node.js` is installed.
